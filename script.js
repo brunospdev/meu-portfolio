@@ -60,20 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     /* ==========================================================================
-       4. EFEITO DE DIGITAÇÃO
-       - Animação de texto sendo digitado
-    ========================================================================== */
-    document.querySelectorAll('.typing-animation').forEach(element => {
-        element.style.width = '0';
-        new IntersectionObserver((entries, observer) => {
-            if (entries[0].isIntersecting) {
-                element.style.width = '100%';
-                observer.disconnect();
-            }
-        }).observe(element);
-    });
-
-    /* ==========================================================================
        5. EFEITO DE BRILHO NA FOTO
        - Brilho que segue o cursor do mouse
     ========================================================================== */
