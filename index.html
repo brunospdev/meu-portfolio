@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Preload Fonts -->
+    <link rel="preload" href="./fonts/neopixel.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <title>Meu Portfolio / Bruno</title>
+</head>
+<body>
+    <!-- ============================================================================
+         NAV
+    ============================================================================= -->
+    <nav class="menu">
+        <div class="menu-titulo">
+            <b>Bruno Santana</b>
+            <span>Desenvolvedor</span>
+        </div>
+        <ul class="menu-lista">
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#skills" class="menu-link">Skills</a></li>
+            <li><a href="#portfolio" class="menu-link">Portfolio</a></li>
+            <li><a href="#contato" class="menu-link">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================================================
+         CABEÇALHO
+    ============================================================================= -->
+    <main id="inicio" class="cabecalho">
+        <div>
+            <div class="foto-container">
+                <img src="/img/foto_bruno.png" alt="Foto de Bruno" class="foto-perfil" loading="lazy">
+            </div>
+            <h1>Olá, eu sou <span class="nome-destaque">BRUNO</span>! <br> Escrevo <b>códigos</b> e crio <b>experiências</b>.</h1>
+            <div class="disponivel-container">
+                <div class="disponivel-dot"></div>
+                <span class="disponivel-text">Disponível</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================================================================
+         SOBRE 
+    ============================================================================= -->
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Console.log("<span class="nome-destaque">Bruno</span>");</h2>
+        <div class="sobre-paragrafo">
+            <p>Sempre fui muito ligado a tecnologia, curioso sobre como as coisas funcionam por trás 
+                das telas. Hoje, estou cursando Sistemas de Informação e sigo explorando cada vez mais 
+                o universo do desenvolvimento. Atualmente, estudo Front-end e Back-end, buscando ser
+                 um desenvolvedor completo. Também atuo como designer gráfico, o que me ajuda a unir 
+                código e estética para criar experiências visuais e funcionais. Viciado em aprender 
+                coisas novas, transformar ideias em projetos reais e trabalhar com propósito. 
+                No fim das contas, escrever códigos e criar artes é meu jeito de construir, comunicar e 
+                criar no mundo digital.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================================
+         SKILLS 
+    ============================================================================= -->
+    <section id="skills" class="skills">
+        <h1 class="skills-titulo">Skills</h1>
+        <div class="skills-lista">
+            <ul>
+                <li class="html">
+                    <img src="/img/html.png" alt="logo do html" width="150" loading="lazy">
+                    <span>HTML5</span>
+                    <div class="progress-circle">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="background" cx="50" cy="50" r="35" />
+                            <circle class="progress" cx="50" cy="50" r="35" />
+                        </svg>
+                        <span>90%</span>
+                    </div>
+                </li>
+                <li class="css">
+                    <img src="/img/css.png" alt="logo do css" width="150" loading="lazy">
+                    <span>CSS3</span>
+                    <div class="progress-circle">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="background" cx="50" cy="50" r="35" />
+                            <circle class="progress" cx="50" cy="50" r="35" />
+                        </svg>
+                        <span>70%</span>
+                    </div>
+                </li>
+                <li class="js">
+                    <img src="/img/js.png" alt="logo do JavaScript" width="150" loading="lazy">
+                    <span>JAVASCRIPT</span>
+                    <div class="progress-circle">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="background" cx="50" cy="50" r="35" />
+                            <circle class="progress" cx="50" cy="50" r="35" />
+                        </svg>
+                        <span>40%</span>
+                    </div>
+                </li>
+                <li class="figma">
+                    <img src="/img/figma.png" alt="logo do Figma" width="150" loading="lazy">
+                    <span>FIGMA</span>
+                    <div class="progress-circle">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="background" cx="50" cy="50" r="35" />
+                            <circle class="progress" cx="50" cy="50" r="35" />
+                        </svg>
+                        <span>90%</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- ============================================================================
+         PORTFOLIO 
+    ============================================================================= -->
+    <section id="portfolio" class="portfolio">
+        <h2 class="portfolio-titulo">Portfolio</h2>
+        <h5 class="portfolio-subtitulo">Projetos que colocam minhas habilidades em prática!</h5>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <div class="projetos-imagem-container">
+                    <img src="/img/projeto1.png" alt="Projeto 1" class="projetos-imagem" loading="lazy">
+                    <div class="projetos-links">
+                        <a href="#" class="projeto-link"><i class="fas fa-globe"></i>Ver Site</a>
+                        <a href="#" class="projeto-link"><i class="fab fa-github"></i>GitHub</a>
+                    </div>
+                </div>
+                <div class="projetos-conteudo">
+                    <h3 class="projetos-titulo">Nome do Projeto</h3>
+                    <p class="projetos-descricao">Uma descrição detalhada do projeto, explicando seus principais recursos e objetivos. Destaque os desafios superados e as soluções implementadas.</p>
+                    <div class="projetos-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="/img/projeto2.png" alt="Projeto 2" class="projetos-imagem" loading="lazy">
+                <h3 class="projetos-titulo">Projeto 2</h3>
+                <p class="projetos-descricao">Descrição do projeto 2.</p>
+                </div>      
+
+            <div class="projetos-card">
+                <img src="/img/projeto3.png" alt="Projeto 3" class="projetos-imagem" loading="lazy">
+                <h3 class="projetos-titulo">Projeto 3</h3>
+                <p class="projetos-descricao">Descrição do projeto 3.</p>
+                </div>
+            
+            <div class="projetos-card">
+                <img src="/img/projeto4.png" alt="Projeto 4" class="projetos-imagem" loading="lazy">
+                <h3 class="projetos-titulo">Projeto 4</h3>
+                <p class="projetos-descricao">Descrição do projeto 4.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================
+         FOOTER 
+    ============================================================================= -->
+    <footer class="footer">
+        <div id="contato" class="contato-section">
+            <div class="contato-titulo-container">
+                <div class="titulo-wrapper">
+                    <h2 class="contato-titulo">Tem uma Idéia?</h2>
+                    <h2 class="contato-subtitulo">Vamos trabalhar juntos!</h2>
+                </div>
+                <img src="/img/C7D90EEC-0EF1-46D8-81E9-037CE4CA5CE1_1_201_a.png" alt="Ícone de lâmpada">
+            </div>
+            <p class="contato-texto">Entre em contato</p>
+            
+            <div class="contato-container">
+                <div class="contato-form">
+                    <form action="mailto:brunospb.dev@gmail.com" method="POST" enctype="text/plain">
+                        <div class="form-group">
+                            <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="E-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mensagem" name="mensagem" placeholder="Mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="enviar-btn">ENVIAR</button>
+                    </form>
+                </div>
+                
+                <div class="mapa">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126443.36836983877!2d-37.133675!3d-10.947265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab04015be27cd%3A0x804434fd92ec3b36!2sAracaju%2C%20SE!5e0!3m2!1spt-BR!2sbr!4v1710295288144!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="mailto:brunospb.dev@gmail.com" class="social-link shine-button" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/brunospdev" class="social-link shine-button" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/bruno-santanadev" class="social-link shine-button" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/5579991419000" class="social-link shine-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://instagram.com/brunostbr" class="social-link shine-button" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <div class="footer-info">
+                <p class="developer-name">Bruno Santana</p>
+                <p class="developer-title">Desenvolvedor <span class="year">2025</span></p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
