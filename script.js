@@ -1,7 +1,3 @@
-/* ==========================================================================
-   INICIALIZAÇÃO
-   - Configuração inicial e carregamento do DOM
-========================================================================== */
 document.addEventListener("DOMContentLoaded", function () {
   /* ==========================================================================
        1. ANIMAÇÃO DO CÍRCULO DE PROGRESSO
@@ -44,30 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   skillsObserver.observe(skillsSection);
-
-  /* ==========================================================================
-       3. ANIMAÇÕES DE SCROLL
-       - Efeitos fade e scale ao rolar a página
-    ========================================================================== */
-  const scrollAnimationObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    }
-  );
-
-  document
-    .querySelectorAll(".fade-up, .fade-in-left, .fade-in-right, .scale-up")
-    .forEach((el) => {
-      scrollAnimationObserver.observe(el);
-    });
 
   /* ==========================================================================
        5. EFEITO DE BRILHO NA FOTO
