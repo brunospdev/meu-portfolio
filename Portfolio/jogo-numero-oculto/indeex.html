@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe o Número</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Adivinhe o Número Secreto!</h1>
+
+        <div id="setup-section">
+            <h2>Jogador 1: Defina o Número Secreto</h2>
+            <p>Digite um número entre 1 e 100 para o Jogador 2 adivinhar.</p>
+            <input type="password" id="secret-number-input" placeholder="Digite o número secreto" min="1" max="100">
+            <button id="set-secret-button">Esconder Número</button>
+            <p class="error-message" id="setup-error"></p>
+        </div>
+
+        <div id="guess-section" class="hidden">
+            <h2>Jogador 2: Adivinhe o Número</h2>
+            <p>Você tem <span id="attempts-left">5</span> tentativas para adivinhar o número secreto (entre 1 e 100).</p>
+            <input type="number" id="guess-input" placeholder="Digite seu palpite" min="1" max="100">
+            <button id="guess-button">Adivinhar</button>
+            <div id="feedback-messages">
+                </div>
+            <p id="result-message"></p>
+            <button id="play-again-button" class="hidden">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

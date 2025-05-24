@@ -1,0 +1,194 @@
+/* Estilos Globais */
+:root {
+    --color-open: #FBBF24; /* Amarelo */
+    --color-bid: #F97316;  /* Laranja */
+    --color-progress: #3B82F6; /* Azul */
+    --color-done: #10B981;  /* Verde */
+
+    --column-bg: #F3F4F6; /* Cinza claro para o fundo da coluna */
+    --card-bg: #FFFFFF;
+    --text-color: #1F2937;
+    --text-light: #FFFFFF;
+    --border-color: #E5E7EB;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --header-bg: #4A5568; /* Cinza escuro para o header */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #E5E7EB; /* Fundo da página um pouco mais escuro que as colunas */
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-header {
+    background-color: var(--header-bg);
+    color: var(--text-light);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.app-header h1 {
+    margin: 0 0 15px 0;
+    font-size: 2rem;
+}
+
+.task-input-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#task-description {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+#add-task-button {
+    padding: 10px 20px;
+    background-color: var(--color-progress);
+    color: var(--text-light);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#add-task-button:hover {
+    background-color: #2563EB; /* Azul mais escuro */
+}
+
+/* Quadro Kanban */
+.kanban-board {
+    display: flex;
+    flex-grow: 1; /* Ocupa o espaço restante */
+    padding: 20px;
+    gap: 20px; /* Espaço entre as colunas */
+    overflow-x: auto; /* Permite rolagem horizontal se as colunas não couberem */
+    align-items: flex-start; /* Alinha as colunas no topo */
+}
+
+.kanban-column {
+    background-color: var(--column-bg);
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px; /* Largura fixa para cada coluna */
+    min-width: 280px; /* Largura mínima */
+    flex-shrink: 0; /* Impede que as colunas encolham */
+    box-shadow: 0 2px 5px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 180px); /* Evita que a coluna seja maior que a tela */
+}
+
+
+.column-title {
+    padding: 10px 0;
+    margin: -15px -15px 15px -15px; /* Estende até as bordas do padding da coluna */
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-light);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.column-title-open { background-color: var(--color-open); }
+.column-title-bid { background-color: var(--color-bid); }
+.column-title-progress { background-color: var(--color-progress); }
+.column-title-done { background-color: var(--color-done); }
+
+.column-cards {
+    flex-grow: 1;
+    min-height: 100px; /* Altura mínima para a área de drop */
+    overflow-y: auto; /* Scroll para os cards dentro da coluna */
+    padding: 5px; /* Pequeno padding interno */
+}
+
+/* Card de Tarefa */
+.task-card {
+    background-color: var(--card-bg);
+    border-left: 5px solid; /* A cor será definida pelo JS */
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    cursor: grab; /* Indica que pode ser arrastado */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinha o botão de remover ao topo */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow-wrap: break-word;
+}
+
+.task-card p {
+    margin: 0;
+    flex-grow: 1; /* Ocupa o espaço disponível */
+    padding-right: 10px; /* Espaço para o botão */
+}
+
+.task-card .remove-task-button {
+    background-color: transparent;
+    color: #EF4444; /* Vermelho para remover */
+    border: none;
+    padding: 5px;
+    margin-left: 5px; /* Garante um espaço mínimo */
+    line-height: 1;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    flex-shrink: 0; /* Não deixa o botão encolher */
+}
+
+.task-card .remove-task-button:hover {
+    background-color: #FEE2E2; /* Fundo vermelho bem claro no hover */
+}
+
+/* Estilos para Drag and Drop */
+.dragging {
+    opacity: 0.5;
+    border: 2px dashed var(--primary-color); /* Feedback visual ao arrastar */
+}
+
+.drag-over {
+    background-color: #D1D5DB; /* Cor de fundo da coluna ao arrastar sobre ela */
+    border: 2px dashed #6B7280; /* Borda da coluna */
+}
+
+/* Cores específicas dos cards por coluna (borda esquerda) */
+.task-card[data-column="open"] { border-left-color: var(--color-open); }
+.task-card[data-column="bid"] { border-left-color: var(--color-bid); }
+.task-card[data-column="progress"] { border-left-color: var(--color-progress); }
+.task-card[data-column="done"] { border-left-color: var(--color-done); }
+
+/* Scrollbars customizados (opcional) */
+.column-cards::-webkit-scrollbar {
+    width: 8px;
+}
+.column-cards::-webkit-scrollbar-track {
+    background: #E5E7EB;
+    border-radius: 10px;
+}
+.column-cards::-webkit-scrollbar-thumb {
+    background: #9CA3AF;
+    border-radius: 10px;
+}
+.column-cards::-webkit-scrollbar-thumb:hover {
+    background: #6B7280;
+}

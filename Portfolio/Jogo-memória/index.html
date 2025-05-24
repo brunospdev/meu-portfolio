@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jogo da Memória</h1>
+            <div class="game-info">
+                <p>Tentativas nesta rodada: <span id="current-attempts">0</span></p>
+                <button id="restart-button">Reiniciar Jogo</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="game-board" class="game-board">
+                </div>
+            <p id="win-message" class="win-message hidden"></p>
+        </main>
+
+        <aside class="history-section">
+            <h2>Histórico de Tentativas</h2>
+            <ul id="history-list">
+                <li>Nenhuma rodada jogada ainda.</li>
+            </ul>
+        </aside>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

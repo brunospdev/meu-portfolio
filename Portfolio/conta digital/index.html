@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankSE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-container">
+                <img src="imagens/img_logo.png" alt="BankSE Logo" class="logo">
+            </div>
+            <div class="user-info">
+                <span>Olá, Fulano</span>
+                <img src="imagens/icon_user_.png" alt="Usuário" class="user-icon">
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="account-overview">
+                <div class="balance-card card">
+                    <div class="card-header">Conta</div>
+                    <div class="balance-amount">R$ <span id="current-balance">1000.00</span></div>
+                </div>
+                <div class="summary-cards">
+                    <div class="summary-card entradas card">
+                        <div class="card-header">Entradas</div>
+                        <div class="summary-amount">R$ <span id="total-entries">0.00</span></div>
+                    </div>
+                    <div class="summary-card saidas card">
+                        <div class="card-header">Saídas</div>
+                        <div class="summary-amount">R$ <span id="total-exits">0.00</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main-features">
+                <div class="insurance-promo card">
+                    <img src="imagens/img_seguros.png" alt="Publicidade de Seguros para Família" class="insurance-image">
+                    <div class="insurance-text">
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <button class="action-button" id="btn-pix">
+                        <img src="imagens/icon_pix_.png" alt="Área PIX">
+                        <span>Área PIX</span>
+                    </button>
+                    <button class="action-button" id="btn-pagar">
+                        <img src="imagens/icon _dollar_.png" alt="Pagar">
+                        <span>Pagar</span>
+                    </button>
+                    <button class="action-button" id="btn-investir">
+                        <img src="imagens/icon _graph_.png" alt="Investir">
+                        <span>Investir</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="pix-area card hidden" id="pix-section">
+                <div class="pix-tabs">
+                    <button class="pix-tab-button active" data-form="receive">RECEBER</button>
+                    <button class="pix-tab-button" data-form="transfer">TRANSFERIR</button>
+                </div>
+                <div class="pix-forms-container">
+                    <form id="pix-receive-form" class="pix-form">
+                        <h3>Receber PIX</h3>
+                        <div class="form-group">
+                            <label for="receive-key">CNPJ/CPF do Pagador:</label>
+                            <input type="text" id="receive-key" placeholder="Digite o CNPJ ou CPF" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="receive-amount">Valor a Cobrar (R$):</label>
+                            <input type="number" id="receive-amount" placeholder="0.00" step="0.01" min="0.01" required>
+                        </div>
+                        <p class="form-error-message" id="receive-error-message"></p>
+                        <button type="submit" class="btn-submit-pix">Gerar Cobrança</button>
+                    </form>
+
+                    <form id="pix-transfer-form" class="pix-form hidden">
+                        <h3>Transferir PIX</h3>
+                        <div class="form-group">
+                            <label for="transfer-key">Chave PIX de Destino:</label>
+                            <input type="text" id="transfer-key" placeholder="Email, CPF/CNPJ, Celular ou Chave Aleatória" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transfer-amount">Valor a Enviar (R$):</label>
+                            <input type="number" id="transfer-amount" placeholder="0.00" step="0.01" min="0.01" required>
+                        </div>
+                        <p class="form-error-message" id="transfer-error-message"></p>
+                        <button type="submit" class="btn-submit-pix">Transferir</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="transactions-section card">
+                <h3 class="transactions-title">Últimas transações</h3>
+                <ul id="transactions-list" class="transactions-list">
+                    <li class="no-transactions">Não constam transações</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; <span id="current-year">2024</span> BankSE</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
